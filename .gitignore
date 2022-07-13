@@ -113,5 +113,5 @@ saves/
 
 # my config
 .vscode/
-test_*.py
-test_*.ipynb
+test.py
+test.ipynb
