@@ -31,7 +31,10 @@ class DbvMonitor(object):
 			else:
 				string = data
 			# print "Process %d: %s" % (process_id, string)
-		return (process_id, string.decode())
+		try:
+			return (process_id, string.decode())
+		except UnicodeDecodeError:
+			return (process_id, '')
 
 
 

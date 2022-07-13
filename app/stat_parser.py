@@ -14,7 +14,7 @@ parsed to:
 escape_pat_key = re.compile(r'((, )|{)(.*?):')
 escape_pat_value = re.compile(r': (.*?)(,|})')
 parse_send_pat = re.compile(r'VideoSendStream stats: (.*?), ({.*?}) ({.*?})')
-parse_recv_pat = re.compile(r'VideoReceiveStream stats: (.*?), ({.*?}) ({.*?})')
+parse_recv_pat = re.compile(r'VideoReceiveStream stats: (.*?), ({.*?})')
 
 def msg2dict(msg: str)-> dict:
 	keys = re.findall(escape_pat_key, msg)
@@ -50,6 +50,6 @@ def is_send_msg(msg: str):
 	return re.search(parse_send_pat, msg) is not None 
 
 def is_recv_msg(msg: str):
-	return re.search(parse_send_pat, msg) is not None 
+	return re.search(parse_recv_pat, msg) is not None 
 
 ###
