@@ -61,5 +61,5 @@ if __name__ == '__main__':
 
 	# print(parse(sample))
 
-	reporter = VideoStatsReporter('192.168.31.127', 1234)
+	reporter = VideoStatsReporter('192.168.31.228', 1234)
 	reporter.serve_forever()
